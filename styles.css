@@ -1,3 +1,7 @@
+h1 {
+  clear: none;
+}
+
 a {
-  float: right;
+  float: left;
 }
