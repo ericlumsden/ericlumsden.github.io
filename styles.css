@@ -1,5 +1,8 @@
 h1 {
-  clear: none;
+  margin:0;
+  padding:0;
+  padding-left:7px;
+  display:inline;
 }
 
 a {
@@ -8,12 +11,15 @@ a {
 }
 
 ul {
+  width:85%;
+  float:right;
+  display:inline;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 2px;
+  text-align: right;
 }
 
 li {
   display: inline;
-  float: left;
 }
