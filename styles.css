@@ -5,11 +5,6 @@ h1 {
   display:inline;
 }
 
-a {
-  display: block;
-  padding: 8px;
-}
-
 ul {
   width:85%;
   float:right;
