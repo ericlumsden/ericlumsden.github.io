@@ -2,6 +2,7 @@ h1 {
   margin:0;
   padding:0px 6px 0px 0px;
   display:inline;
+  clear:right;
 }
 
 ul {
