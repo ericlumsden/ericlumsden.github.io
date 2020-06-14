@@ -3,6 +3,7 @@ h1 {
   padding:0px 6px 0px 0px;
   display:inline;
   clear:right;
+  font-family: "Gill Sans", sans-serif;
 }
 
 ul {
@@ -10,11 +11,17 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 10px 0 0px 6px;
+  font-family: "Gill Sans", sans-serif;
 }
 
 li {
   list-style: none;
   display:inline-block;
+  font-family: "Gill Sans", sans-serif;
+}
+
+p {
+  font-family: "Gill Sans", sans-serif;
 }
 
 a:link {
@@ -35,4 +42,6 @@ a:visited {
 .footer {
   position: fixed;
   color: #4d4d4d;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 12px;
 }
