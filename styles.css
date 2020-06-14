@@ -1,21 +1,32 @@
 h1 {
   margin:0;
-  padding:0;
-  padding-left:7px;
+  padding:0px 6px 0px 0px;
   display:inline;
 }
 
 ul {
-  width:85%;
-  float:right;
-  display:inline;
+  display:inline-block;
   list-style-type: none;
   margin: 0;
-  padding: 0 0 2px;
-  text-align: left;
+  padding: 0px 0 0px 6px;
 }
 
 li {
-  display: inline;
+  display: inline-block;
   list-style: none;
+}
+
+a:link {
+  color: #4d4d4d;
+  text-decoration:none;
+}
+
+a:visited {
+  color: #4d4d4d;
+  text-decoration:none;
+}
+
+.footer {
+  position: fixed;
+  color: #4d4d4d;
 }
