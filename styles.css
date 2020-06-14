@@ -8,11 +8,12 @@ ul {
   display:inline-block;
   list-style-type: none;
   margin: 0;
-  padding: 0px 0 0px 6px;
+  padding: 10px 0 0px 6px;
 }
 
 li {
   list-style: none;
+  display:inline-block;
 }
 
 a:link {
