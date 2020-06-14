@@ -45,3 +45,17 @@ a:visited {
   font-family: "Gill Sans", sans-serif;
   font-size: 12px;
 }
+
+p.contact {
+  font-size: 22px;
+}
+
+p.address {
+  line-height: 1;
+  font-weight: bold;
+}
+
+p.address_line {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
