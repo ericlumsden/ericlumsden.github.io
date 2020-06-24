@@ -18,6 +18,7 @@ li {
   list-style: none;
   display:inline-block;
   font-family: "Gill Sans", sans-serif;
+  color: grey;
 }
 
 p {
@@ -34,6 +35,10 @@ a:visited {
   text-decoration:none;
 }
 
+a:hover {
+  color: black;
+}
+
 .profileImage {
   float: right;
   padding: 50px 20px 0px 10px;
@@ -46,16 +51,17 @@ a:visited {
   font-size: 12px;
 }
 
-p.contact {
+.contact {
   font-size: 22px;
 }
 
-p.address {
+.address {
   line-height: 1;
   font-weight: bold;
+  padding-top: 20px;
 }
 
-p.address_line {
+.address_line {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
