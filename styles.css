@@ -69,12 +69,14 @@ a:hover {
 table {
   padding: 15px 15px 15px 15px;
   margin: 10px 10px 10px 10px;
+  font-family: "Gill Sans", sans-serif;
 }
 
 td {
   padding: 15px;
   margin: 25px;
   border-top: solid 1px black;
+  font-size: 14px;
 }
 
 tr {
