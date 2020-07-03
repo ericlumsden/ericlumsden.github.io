@@ -74,7 +74,7 @@ table {
 td {
   padding: 15px;
   margin: 25px;
-  border-top: thin solid;
+  border-top: solid 1px black;
 }
 
 tr {
