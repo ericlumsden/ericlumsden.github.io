@@ -65,3 +65,25 @@ a:hover {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
+
+table {
+  padding: 15px 15px 15px 15px;
+  margin: 10px 10px 10px 10px;
+}
+
+td {
+  padding: 15px;
+  margin: 25px;
+}
+
+tr {
+  outline: thin solid;
+  margin: 15px, 15px, 15px, 15px;
+}
+
+.authors {
+  width: 300px;
+}
+.journal {
+  width:150px;
+}
