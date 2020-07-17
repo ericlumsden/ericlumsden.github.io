@@ -106,3 +106,18 @@ a.post {
 a.post:hover {
   color: grey;
 }
+
+.image_off, #Lucy:hover .image_on {
+  right: 0;
+  height: 50px;
+  width: 60px;
+  position: fixed;
+  display:none;
+}
+.image_on, #Lucy:hover .image_off {
+  right: 0;
+  height: 50px;
+  width: 60px;
+  position: fixed;
+  display:block;
+}
