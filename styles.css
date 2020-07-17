@@ -6,6 +6,13 @@ h1 {
   font-family: "Gill Sans", sans-serif;
 }
 
+h2 {
+  margin:0;
+  padding:0px 6px 0px 0px;
+  clear:right;
+  font-family: "Gill Sans", sans-serif;
+}
+
 ul {
   display:inline-block;
   list-style-type: none;
