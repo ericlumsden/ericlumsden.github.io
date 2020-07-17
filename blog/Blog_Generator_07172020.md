@@ -47,7 +47,7 @@ my @input = ("sed", "-i", "26i <br\><li\><a class=\"post\" href=\"".$n.".html\"\
 system(@input);
 ```
 
-The call to add this line into line 26 is hard coded so that the links will appear chronologically, with the hyperlink to the newest blog post being inserted into the top of the list of posts. Then, both the link to the shared css stylesheet (link placed immediately after the style tag) and the header information (added to the body) are added to the newly created blogpost.
+The call to add this line into line 26 is hard coded because that is below the start of the unordered list of posts and so that the links will appear chronologically, with the hyperlink to the newest blog post being inserted into the top of the list of posts. Then, both the link to the shared css stylesheet (link placed immediately after the head tag) and the header information (added to the body) are added to the newly created blogpost.
 
 ```Perl
 my @css = ("sed", "-i", "/<head>/a <link rel=\"stylesheet\" href=\"../styles.css\"\>", $n.".html");
