@@ -24,9 +24,9 @@ foreach my $n (@blogs) {
     system(@cmd);
     my @input = ("sed", "-i", "26i <br\><li\><a href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
     system(@input);
-    my @css = ("sed", "-i", "/<head>/a <link rel=\"stylesheet\" href=\"styles.css\"\>", $n.".html");
+    my @css = ("sed", "-i", "/<head>/a <link rel=\"stylesheet\" href=\"../styles.css\"\>", $n.".html");
     system(@css);
-    my @bloglink = ("sed", "-i", "/<body>/a <h1>Eric William Lumsden</h1> <ul> <li><a href=\"index.html\"\>home</a></li> <li><a href=\"about.html\"\>about</a></li> <li><a href=\"publications.html\"\>publications</a></li> <li><a href=\"blog.html\"\>blog</a></li> <li><a href=\"contact.html\"\>contact</a></li></ul><br><br><br>", $n.".html");
+    my @bloglink = ("sed", "-i", "/<body>/a <h1>Eric William Lumsden</h1> <ul> <li><a href=\"../index.html\"\>home</a></li> <li><a href=\"../about.html\"\>about</a></li> <li><a href=\"../publications.html\"\>publications</a></li> <li><a href=\"blog.html\"\>blog</a></li> <li><a href=\"../contact.html\"\>contact</a></li></ul><br><br><br>", $n.".html");
     system(@bloglink);
   }
 }
