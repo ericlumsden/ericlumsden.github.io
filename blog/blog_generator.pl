@@ -22,7 +22,7 @@ foreach my $n (@blogs) {
     push(@new, $n);
     my @cmd = ("pandoc", $n.".md", "-s", "-o", $n.".html");
     system(@cmd);
-    my @input = ("sed", "-i", "26i <br\><li\><a href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
+    my @input = ("sed", "-i", "26i <br\><li\><a class="post" href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
     system(@input);
     my @css = ("sed", "-i", "/<head>/a <link rel=\"stylesheet\" href=\"../styles.css\"\>", $n.".html");
     system(@css);

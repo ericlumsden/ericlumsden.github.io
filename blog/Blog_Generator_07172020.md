@@ -43,7 +43,7 @@ if ($count eq 0) {
 *Voila!* Part one is done, and in only 20ish lines of code. Now, all that is left to do is add a hyperlink to that newly created blogpost in the blog's main page.
 
 ```Perl
-my @input = ("sed", "-i", "26i <br\><li\><a href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
+my @input = ("sed", "-i", "26i <br\><li\><a class="post" href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
 system(@input);
 ```
 

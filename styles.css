@@ -96,3 +96,13 @@ tr {
 .journal {
   width:150px;
 }
+
+a.post {
+  list-style: none;
+  font-family: "Gill Sans", sans-serif;
+  color: black;
+}
+
+a.post:hover {
+  color: grey;
+}
