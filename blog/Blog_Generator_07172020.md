@@ -43,7 +43,7 @@ if ($count eq 0) {
 *Voila!* Part one is done, and in only 20ish lines of code. Now, all that is left to do is add a hyperlink to that newly created blogpost in the blog's main page.
 
 ```Perl
-my @input = ("sed", "-i", "26i <br\><li\><a class="post" href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
+my @input = ("sed", "-i", "26i <br\><li\><a class=\"post\" href=\"".$n.".html\"\>".$n."</a></li\><br\>", "blog.html");
 system(@input);
 ```
 
@@ -58,7 +58,7 @@ system(@bloglink);
 
 The styles sheet and all other pages of the website are placed in the folder directly upstream in the hierarchy, so the links to them must be prefaced with a call to that upstream folder (`../`).
 
-That's it. This script sits in my blog directory in my website repository. Now, whenever I create a new blog post with markdown and want to turn translate it to html, I simply navigate to the blog directory and call the program in my terminal using perl.
+That's it. This script sits in my blog directory in my website repository. Now, whenever I create a new blog post with markdown and want to translate it to html, I simply navigate to the blog directory and call the program in my terminal using perl.
 
 ```console
 ~/website/blog$ perl blog_generator.pl
