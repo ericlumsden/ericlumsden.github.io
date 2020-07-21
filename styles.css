@@ -52,8 +52,9 @@ a:hover {
 }
 
 .footer {
-  position: absolute;
-  bottom: 10px;
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
   color: #4d4d4d;
   font-family: "Gill Sans", sans-serif;
   font-size: 12px;
