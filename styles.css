@@ -52,7 +52,8 @@ a:hover {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
+  bottom: 10px;
   color: #4d4d4d;
   font-family: "Gill Sans", sans-serif;
   font-size: 12px;
@@ -109,6 +110,7 @@ a.post:hover {
 
 .image_off, #Lucy:hover .image_on {
   right: 0;
+  bottom: 5px;
   height: 50px;
   width: 60px;
   position: fixed;
@@ -116,6 +118,7 @@ a.post:hover {
 }
 .image_on, #Lucy:hover .image_off {
   right: 0;
+  bottom: 5px;
   height: 50px;
   width: 60px;
   position: fixed;
