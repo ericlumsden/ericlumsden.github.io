@@ -1,14 +1,14 @@
 # Investigating the Number of Primary Challengers and the Incumbent's Popularity
 *As an exercise in creating interactive graphs I am investigating any possible correlation between primary challengers and the popularity of the incumbent*
 
-At the beginning of the 2020 Democratic primaries, Mark Schmitt, [an article at Vox](https://www.vox.com/polyarchy/2019/5/1/18525526/democratic-candidates-president-why-so-many), put forward a number of theories as to why there were so many individuals running to be the nominee. These theories included:
+At the beginning of the 2020 Democratic primaries, Mark Schmitt, in [an article at Vox](https://www.vox.com/polyarchy/2019/5/1/18525526/democratic-candidates-president-why-so-many), put forward a number of theories as to why there were so many individuals running to be the nominee. These theories included:
 
-* A lack of a democratic incumbent
-* A lack of a 'next-in-line Democrat'
-* A surge in 'dollars and donors'
-* An inability for minority Senators to make a significant impact
+    * A lack of a democratic incumbent
+    * A lack of a 'next-in-line Democrat'
+    * A surge in 'dollars and donors'
+    * An inability for minority Senators to make a significant impact
 and
-* 'a solid, though not certain, chance of Democratic victory'
+    * 'a solid, though not certain, chance of Democratic victory'
 
 This last point in my list was one of the first that Mark brought up in his article. I put it last because it is the one that got me to pause. It sounds like a hypothesis that we can actually investigate: *is there a correlation between an incumbent or sitting president's popularity and the number of individuals running for the opposing party's nomination?*
 
