@@ -1,1 +1,1 @@
-document.getElementById("date").innerHTML = "2020.12.20";
+document.getElementById("date").innerHTML = "2021.10.22";
