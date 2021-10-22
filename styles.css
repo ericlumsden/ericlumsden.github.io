@@ -128,6 +128,7 @@ a.post:hover {
 }
 
 body {
+  padding: 20px;
   min-height: 400px;
   margin-bottom: 50px;
   clear: both;
