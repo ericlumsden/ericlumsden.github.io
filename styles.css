@@ -13,6 +13,10 @@ h2 {
   font-family: "Gill Sans", sans-serif;
 }
 
+h3 {
+	font-family: "Gill Sans", sans-serif;
+}
+
 ul {
   display:inline-block;
   list-style-type: none;
