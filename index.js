@@ -7,6 +7,7 @@ document.getElementById("app-header").innerHTML = `
 <li><a href="publications.html">publications</a></li>
 <li><a href="./blog/blog.html">blog</a></li>
 <li><a href="contact.html">contact</a></li>
+<li><a href="https://github.com/ericlumsden"><img title='github' alt='github' src="./images/github.png" width="15" height="15" /></a></li>
 <li><a href="https://medium.com/@eric.lumsden"><img title='Medium' alt='Medium' src="./images/medium.png" width="15" height="15" /></a></li>
 <li><a href="https://twitter.com/lumsden_eric"><img title='twitter' alt="Twitter" src="./images/twitter.png" width="15" height="15" /></a></li>
 <li><a href="https://www.linkedin.com/in/ericlumsden"><img title='LinkedIn' alt="LinkedIn" src="./images/linkedin.png" width="15" height="15" /></a></li>
