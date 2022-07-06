@@ -1,3 +1,25 @@
+body {
+  background-color: #8a100b;
+}
+
+body.blog {
+  background-color: white;
+}
+
+.homepage {
+  background-image: url('./images/rainier.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#homepage-container {
+  background-color: rgba(251, 251, 251, 0.2);
+  margin: 200px 250px 275px 250px;
+  position: fixed center;
+  font-size: 22px;
+}
+
 h1 {
   margin:0;
   padding:0px 6px 0px 0px;
@@ -24,6 +46,7 @@ ul {
   margin: 0;
   padding: 10px 0 0px 6px;
   font-family: "Gill Sans", sans-serif;
+  color:black;
 }
 
 ol {
@@ -34,7 +57,7 @@ li {
   list-style: none;
   display:inline-block;
   font-family: "Gill Sans", sans-serif;
-  color: grey;
+  color: black;
 }
 
 p {
@@ -42,7 +65,7 @@ p {
 }
 
 a:link {
-  color: #4d4d4d;
+  color: grey;
   text-decoration:none;
 }
 
@@ -52,20 +75,20 @@ a:visited {
 }
 
 a:hover {
-  color: black;
+  color: #F76900;
 }
 
-.profileImage {
+.profilepic {
   float: right;
   padding: 50px 20px 0px 10px;
 }
 
 footer {
-  background-color: white;
+  background-color: #8a100b;
   position: fixed;
   margin-top: 10px;
   bottom: 0px;
-  color: #4d4d4d;
+  color: #F76900;
   font-family: "Gill Sans", sans-serif;
   font-size: 12px;
 }
@@ -109,14 +132,26 @@ tr {
   width:150px;
 }
 
+a.header {
+  list-style: none;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+a.header:hover {
+  color: #F76900;
+}
+
 a.post {
   list-style: none;
   font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
   color: black;
 }
 
 a.post:hover {
-  color: grey;
+  color: #F76900;
 }
 
 .image_off, #Lucy:hover .image_on {
@@ -127,6 +162,7 @@ a.post:hover {
   position: fixed;
   display:none;
 }
+
 .image_on, #Lucy:hover .image_off {
   right: 15px;
   bottom: 5px;
@@ -141,4 +177,17 @@ body {
   min-height: 400px;
   margin-bottom: 50px;
   clear: both;
+}
+
+.profilepic {
+  display: inline-block;
+}
+
+#app-footer-hp {
+  position: fixed;
+  margin-top: 10px;
+  bottom: 0px;
+  color: black;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 12px;
 }
