@@ -20,6 +20,13 @@ body.blog {
   font-size: 22px;
 }
 
+#about-container {
+  background-color: rgba(251, 251, 251, 0.2);
+  margin: 30px 20px 75px 0px;
+  position: fixed center;
+  font-size: 16px;
+}
+
 h1 {
   margin:0;
   padding:0px 6px 0px 0px;
@@ -65,12 +72,7 @@ p {
 }
 
 a:link {
-  color: grey;
-  text-decoration:none;
-}
-
-a:visited {
-  color: #4d4d4d;
+  color: #b7a57a;
   text-decoration:none;
 }
 
