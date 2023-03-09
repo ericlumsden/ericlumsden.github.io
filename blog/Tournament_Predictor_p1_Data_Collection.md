@@ -12,8 +12,15 @@ The competition evaluates the ability of an individual to predict the probabilit
 
 #### Where's the fun in that?
 
-Part of Kaggle's setup provides each competitor with a ton of data going back to the 1984-85 season, including historical tournament seeds, scores from the regular season and conference and NCAA tournaments as well as season-level details such as dates and region names. I'm much more interested (plus I think it's more fun) in collecting this data myself, particularly as I want control over how my data is laid out for analysis. Luckily all of the information that I plan to use for my model is available through [sports-reference's college basketball site](https://www.sports-reference.com/cbb/). They have scores from all of the previous tournaments as well as season statistics for every team, laid out in either per game or cumulative bases. 
+My plan for the predictor is to compare rate-based season stats for the teams competing against each other, which will be fed into a neural network (NN) to predict probability of team 1 beating team 2, based on outcomes from the matchups in that season's tournament. I therefore need to collect two things: i. outcomes of every game for every tournament since 1985 (first tournament that went to 64+ teams) and ii. rate data for every team that competed in that tournament. While part of Kaggle's setup provides each competitor with a ton of data going back to the 1984-85 season (including historical tournament seeds, scores from the regular season and conference and NCAA tournaments as well as season-level details such as dates and region names), I am interested in collecting this data myself. I want control over how my data is laid out for analysis, plus I think it's more fun. Luckily all of the information that I plan to use for my model is available through [sports-reference's college basketball site](https://www.sports-reference.com/cbb/). They have scores from all of the previous tournaments as well as season statistics for every team, laid out in either per game or cumulative bases. All I have to do is collect that data from their website.
 
-One of the easiest ways that I know of for web scraping is using the javascript module [puppeteer](https://pptr.dev/). Puppeteer is a headless browser that allows you access to all of a website's content and you can easily grab information from a page with just a few lines of code.
+One of the easiest ways that I know of for web scraping is using the javascript library [puppeteer](https://pptr.dev/). Puppeteer is a headless browser that allows you access to all of a website's content and you can easily grab information from a page with just a few lines of code. I'll also be saving my data as tables in a SQL database, so I will need to install both the puppeteer library and sqlite3 module for javascript before beginning. I use nodejs as my Javascript runtime environment and the package manager which is used to install javascript modeuls in nodejs is npm.
+
+```bash
+~:$ cd /example_directroy/
+~:example_directory$ npm install puppeteer, sqlite3
+```
+
+
 
 #### Dance, puppeteer, dance
