@@ -12,3 +12,4 @@ Before getting into my epxeriences tackling the problems, I first want to give a
 ![Figure 1](./foobar_terminal_a.PNG)
 
 There are five challenges, most of which are made up of sub-challenges, that you can request at your leisure and you are afforded seven days to complete each challenge. Most challenges take less time, I finished the first challenge in under two hours, but as you progress the challenges get increasingly more complicated and some have taken me the entire week.
+
