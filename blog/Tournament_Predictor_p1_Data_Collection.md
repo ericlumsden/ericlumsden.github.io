@@ -8,7 +8,7 @@ There are ways in which I could become better at making my selections, each opti
 
 Kaggle is once again hosting it's [March Machine Learning Mania competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2023/overview/description) and I decided to submit an entry this year. It provides a good opportunity to try out some ML techniques I've been learning while adding some potential prize money to the fun and if my alma mater taught me anything it's that [you can't go wrong mixing money with college basketball](https://en.wikipedia.org/wiki/1978%E2%80%9379_Boston_College_basketball_point-shaving_scandal). 
 
-The competition evaluates the ability of an individual to predict the probability of one team winning a game over the other using whatever modeling approaches they want. There are no rules regarding how you make your predictions, just simply that you follow their formatting and submit before the tournament begins. I will be detailing my approach through a series of blog posts, starting with my data collection process.
+The competition evaluates the ability of an individual to predict the probability of one team winning a game over the other using whatever modeling approaches they want. There are no rules regarding how predictions are made, just simply that competitors follow their formatting and submit before the tournament begins. I will be detailing my approach through a series of blog posts, starting with my data collection process.
 
 #### Where's the fun in that?
 
@@ -43,7 +43,7 @@ puppeteer.use(
 );
 ```
 
-The sqlite3 module requires a read/write connection. I like having some confirmation that a successful connection has been established with sqlite3, so I will feed an error printing function into the connection constant that will confirm a connection if there is not error.
+The sqlite3 module requires a read/write connection with an established database. I like having some confirmation that a successful connection has been established with sqlite3, so I will feed an error printing function into the connection constant that will confirm a connection if there is not error.
 
 ```javascript
 const sqlite3 = require("sqlite3").verbose();
@@ -81,7 +81,7 @@ To lookup the year's tournament with puppeteer, I will first launch puppeteer wi
 
 The tournament pages are set-up as a series of divs that I will have to iterate over to grab all team names, scores and hyperlinks to the stats page for each team in that year. Luckily, the divisions, rounds, games and teams are all in their own divs, so some nested for-loops will take care of that; however, different brackets have a different number of rounds and there are differing numbers of games per round.
 
-To tackle the number of games per round in each I will take a quick aside to write a simple function. In a division with 4 rounds, there are initially 8 games for 16 teams with the number of games being divided in half with each round. In the final four there are only 4 games initially and half that in the second/last round.
+To tackle the number of games per round in each bracket I will take a quick aside to write a simple function. In a division with 4 rounds, there are initially 8 games for 16 teams with the number of games being divided in half with each round. In the final four there are only 4 games initially and half that in the second/last round.
 
 ```javascript
 const num_brackets = 5; // 4 division plus final four, indexed starting at 1
@@ -119,7 +119,7 @@ Determining the number of rounds is easier as it is simply tied to which divisio
 
 Upon reaching the correct game, I will then initiate a series of variables to store the data to be inserted into the menstourney table in the ncaa database, then I will iterate over each team in the game, collect team name and href at one XPath and their game score in another.
 
-Gathering data from an XPath is simple using puppeteer. First, right-click and 'Inspect' any element on a webpage. This will open the developer tools in your webbrowser, where you can scroll html elements on your visited page. Right-clicking on the html element in the developer tools brings up a menu from which you can select Copy>XPath. To access that element with puppeteer simply set an array equal to `page.$x(XPath)`. Then, text content and links can be retrieved from those elements with `.getProperty()` (see code below).
+Gathering data from an XPath is simple using puppeteer. First, right-click and 'Inspect' any element on a webpage. This will open the developer tools in your browser, where you can scroll html elements on your visited page. Right-clicking on the html element in the developer tools brings up a menu from which you can select Copy > XPath. To access that element with puppeteer simply set an array equal to `page.$x(XPath)`. Then, text content and links can be retrieved from those elements with `.getProperty()` (see code below).
 
 ```javascript
                     let team1, team1ID, score1, url1, team2, team2ID, score2, url2, winner;
