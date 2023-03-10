@@ -135,7 +135,7 @@ Gathering data from an XPath is simple using puppeteer. First, right-click and '
                         let score_txt = await team_score.getProperty('textContent');
 ```
 
-One thing that I will want is a simple team ID for quick-calling each team. I will generate these IDs by simply taking the year of interest and the team's name, combining those as strings and then removing any whitespace. The function for that is:
+One thing that I will want is a simple team ID for quick-calling each team. I will generate these IDs by taking the year of interest and the team's name, combining those as strings and then removing any whitespace. This ID can then be used in any/all data collection/generation I do moving forward. The function for that is:
 
 ```javascript
 function generate_id(year, team_name) {
@@ -165,14 +165,11 @@ Finally, I will save all collected and generated data into the appropriate varia
                     } else {
                         winner = 1;
                     }
-                    
                     await console.log({team1, url1, score1, team2, url2, score2});
                     await db.run(sql_tourney, [year, bracket, round, game, team1, team1ID, score1, url1, team2, team2ID, score2, url2, winner]);
-
                 }
             }
         }
-
     } catch (error) {
         console.log(error);
     } finally {
@@ -188,7 +185,7 @@ let years_to_scrape = Array.from(Array(2020-1985).keys(), x => x+1985);
 years_to_scrape = years_to_scrape.concat([2021,2022]);
 ```
 
-Then I will write a function that takes in an array of years, iterates over and runs the `scrapeTourney` function on all of those years before closing the connection to the SQL database and finally run that function on the `years_to_scrape` array.
+Then I will write a function that takes in an array of years, iterates over and runs the `scrapeTourney` function on all of those years before closing the connection to the SQL database. Running that function will gather all of the data I'm interested in!
 
 ```javascript
 async function scrapeYears(array_of_years) {
@@ -207,7 +204,7 @@ async function scrapeYears(array_of_years) {
 scrapeYears(years_to_scrape);
 ```
 
-Gathering data for the Women's tournaments is just as simple. I will make a new table for their data (`womenstourney`), change the url to be for their tournaments and change the years to be from 2010 to 2022 (excluding 2019). The reason that I will only be able to collect data from 2010 onward is due to a weird setup sports-reference uses for the Women's tournaments in which their scores are stored in `spans` on the tournament page that I was having trouble accessing. 2010 onward, the setup is similar to that for the Men's tournaments, so I will just gather data from then on.
+Gathering data for the Women's tournaments is just as straightforward. I will make a new table for their data (`womenstourney`), change the url to be for their tournaments and change the years to be from 2010 to 2022 (excluding 2019). There is a weird setup sports-reference uses for the Women's tournaments pre-2010 in which their scores are stored in `spans` on the tournament page that I was having trouble accessing. 2010 onward, the setup is similar to that for the Men's tournaments, so I will just gather data from then on.
 
 #### Gathering team stats
 
