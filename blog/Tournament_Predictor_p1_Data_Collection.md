@@ -4,7 +4,7 @@
 
 I don't watch college basketball. I didn't watch college basketball when I was *in* college. For some reason I still fill out a March Madness bracket every single year, picking upsets and major victories I'm convinced will happen off of nothing more than name recognition and small rooting interests. Once my picks are in I suddenly become a fan, an interested party, an expert. As games in the tournament unfold, however, my sacrosanct selections prove shaky, my once-undefeatable chosen teams now incredibly defeatable.
 
-There are ways in which I could become better at making my selections, each option having obvious benefits and drawbacks. *Effective but time consuming*: I could watch games religiously, garnering team tendencies and tricks through the keen eye of a basketball savant, but who has time for that? *Easy but I would literally rather not play at all than watch sports talk/debate shows*: I could watch experts make their selections on any of a number of sports channels/websites/blogs but my eyes would fall out from constant rolling. *Salmon swim against the current*: George Costanza piloted ['doing the opposite'](https://www.youtube.com/watch?v=CizwH_T7pjg) and simply picking the opposite of who I want to select in each matchup almost certainly can't be worse than how my typical predictions pan out but I'm a big enough *Seinfeld* fan to know that while it's one thing to laugh at George's antics only a fool would emulate him. Honestly, none of these actually seem viable. My preferred route, the nerd route, would be to use statistics and machine learning to help in my selections and one online competition is giving me motivation to do just that.
+There are ways in which I could become better at making my selections, each option having obvious benefits and drawbacks. *Effective but time consuming*: I could watch games religiously, garnering team tendencies and tricks through the keen eye of a basketball savant, but who has time for that? *Easy but I would literally rather not play at all than watch sports talk/debate shows*: I could watch experts make their selections on any of a number of sports channels/websites/blogs but my eyes would fall out of my head as I would be constantly rolling them. *Salmon swim against the current*: George Costanza piloted ['doing the opposite'](https://www.youtube.com/watch?v=CizwH_T7pjg) and simply picking the opposite of who I want to select in each matchup almost certainly can't be worse than how my typical predictions pan out but I'm a big enough *Seinfeld* fan to know that while it's one thing to laugh at George's antics, it's a completely different can of worms emulating him. Honestly, none of these actually seem viable. My preferred route, the nerd route, would be to use statistics and machine learning to help in my selections and one online competition is giving me motivation to do just that.
 
 Kaggle is once again hosting it's [March Machine Learning Mania competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2023/overview/description) and I decided to submit an entry this year. It provides a good opportunity to try out some ML techniques I've been learning while adding some potential prize money to the fun and if my alma mater taught me anything it's that [you can't go wrong mixing money with college basketball](https://en.wikipedia.org/wiki/1978%E2%80%9379_Boston_College_basketball_point-shaving_scandal). 
 
@@ -117,9 +117,9 @@ Determining the number of rounds is easier as it is simply tied to which divisio
                 for (let game = 1; game <= num_games; game++) {
 ```
 
-Upon reaching the correct game, I will then initiate a series of variables to store the data to be inserted into the menstourney table in the ncaa database, then I will iterate over team in the game, collect team name and href at one XPath and their game score in another.
+Upon reaching the correct game, I will then initiate a series of variables to store the data to be inserted into the menstourney table in the ncaa database, then I will iterate over each team in the game, collect team name and href at one XPath and their game score in another.
 
-Gathering data from an XPath is simple using puppeteer. First, right-click and 'Inspect' any element on a webpage. This will open the developer tools in your webbrowser, where you can scroll html elements on your visited page. Right-clicking brings up a menu from which you can select Copy>XPath. To access that element with puppeteer simply set an array equal to `page.$x(XPath)`. Then, text content and links can be retrieved from those elements with `.getProperty()` (see code below).
+Gathering data from an XPath is simple using puppeteer. First, right-click and 'Inspect' any element on a webpage. This will open the developer tools in your webbrowser, where you can scroll html elements on your visited page. Right-clicking on the html element in the developer tools brings up a menu from which you can select Copy>XPath. To access that element with puppeteer simply set an array equal to `page.$x(XPath)`. Then, text content and links can be retrieved from those elements with `.getProperty()` (see code below).
 
 ```javascript
                     let team1, team1ID, score1, url1, team2, team2ID, score2, url2, winner;
@@ -144,7 +144,7 @@ function generate_id(year, team_name) {
 }
 ```
 
-Finally, I will save all collected and generated data into the appropriate variables, generate a `winner` variable by comparing the scores from the two teams in the current game and then save all of that information to the menstourney table in my ncaa database and close the puppeteer browser.
+Finally, I will save all collected and generated data into the appropriate variables, generate a `winner` variable by comparing the scores from the two teams in the current game (0 being a team 1 win, 1 being team 2) and then save all of that information to the menstourney table in my ncaa database.
 
 ```javascript
                         if (team === 1) {
@@ -170,6 +170,11 @@ Finally, I will save all collected and generated data into the appropriate varia
                 }
             }
         }
+```
+
+Once all of the games have been iterated over and saved, we can close the currently open browser before opening the next one.
+
+```javascript
     } catch (error) {
         console.log(error);
     } finally {
