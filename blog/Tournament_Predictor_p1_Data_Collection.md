@@ -1,6 +1,6 @@
 # Forecasting the 2023 NCAA Basketball Tournaments
 ## i. Data Collection
-#### March 10, 2023
+#### March 12, 2023
 
 I don't watch college basketball. I didn't watch college basketball when I was *in* college. For some reason I still fill out a March Madness bracket every single year, picking upsets and major victories I'm convinced will happen off of nothing more than name recognition and small rooting interests. Once my picks are in I suddenly become a fan, an interested party, an expert. As games in the tournament unfold, however, my sacrosanct selections prove shaky, my once-undefeatable chosen teams now incredibly defeatable.
 
@@ -213,6 +213,29 @@ Gathering data for the Women's tournaments is just as straightforward. I will ma
 
 #### Gathering team stats
 
-Scraping team stats from their websites will be much easier than grabbing tournament data. The urls that must be used in puppeteer are already collected and stored in the ncaa database, so it's a simple matter of iterating through those tables, loading the hyperlinks and grabbing their rate stats off their site. As I have already described setting up and running puppeteer and sqlite3, I won't go into those details again.
+Scraping team stats from their websites will be much easier than grabbing tournament data. The urls that must be used in puppeteer are already collected and stored in the ncaa database, so it's a simple matter of iterating through those tables, loading the hyperlinks and grabbing their rate stats off their site. As I have already described setting up and running puppeteer and sqlite3, I won't go into those details again, but here is the basic code structure for reading a SQL table row-by-row.
 
-The primary differences come from the fact that the rate stats are saved in tables, not div elements, but gathering data from tables using puppeteer is still relatively straightforward.
+```javascript
+let team_IDs = new Set([]);
+async function selectRows(table) {
+    db.each(`SELECT * FROM ${table}`, (error, row) => {
+        if (error) {
+            console.error(error.message);
+        }
+        //console.log(row['team_1ID']);
+        for (let team_num = 1; team_num <= 2; team_num++) {
+            let team_id = row[`team_${team_num}ID`]
+            if team_IDs.has(`${table}_${team_id}`) {
+                continue;
+            } else {
+                team_IDs.add(`${table}_${team_id}`);
+                await find_team_stats(row[`url_${team_num}`]);
+            }
+        }
+    });
+}
+```
+
+The initial step in this code is to establish a set called `team_IDs`, which I will use to check if a team has already had their stats collected. I then iterate over rows in the  If they have, I will move to the next team in the row (as I am iterating over team numbers within each row). If the team's ID and table is not in the `team_IDs` set, then I will add them and then run the `find_team_stats()` function on that team's url.
+
+The `find_team_stats()` function is one that takes in a team's url and then performs similar scraping functions on that team's season rate stats as we performed on the tournaments above. The primary differences come from the fact that the rate stats are saved in tables, not div elements, but gathering data from tables using puppeteer is still relatively straightforward.
