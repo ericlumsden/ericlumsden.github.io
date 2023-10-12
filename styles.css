@@ -1,9 +1,40 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   background-color: #8a100b;
 }
 
 body.blog {
   background-color: white;
+}
+
+#app-header {
+  margin: 1em;
+}
+
+#app-header nav li {
+  padding: .25rem;
+  display: inline-block;
+}
+
+#app-header #socials li:not(:first-child) {
+  margin-left: .5rem;
+}
+
+#app-header #socials li {
+  padding: .25rem;
+  display: inline-block;
 }
 
 .homepage {
@@ -14,10 +45,23 @@ body.blog {
 }
 
 #homepage-container {
+  align-self: center;
+  max-width: 55%;
+  margin: 1rem;
+  margin-top: 10%;
   background-color: rgba(251, 251, 251, 0.2);
-  margin: 200px 250px 275px 250px;
-  position: fixed center;
   font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#homepage-container p:not(:first-child) {
+  margin-top: 1rem;
+}
+
+#about {
+  margin: 1rem;
 }
 
 #about-container {
@@ -28,11 +72,23 @@ body.blog {
 }
 
 #contact-container {
-  background-color: rgba(251, 251, 251, 0.2);
-  margin: 50px 180px 75px 180px;
-  position: fixed center;
+  align-self: center;
   text-align: center;
+  width: 75%;
+  background-color: rgba(251, 251, 251, 0.2);
   font-size: 16px;
+}
+
+#contact-container a:link {
+  color: black;
+}
+
+#publications-container {
+  margin: 1em;
+}
+
+#blogposts-container {
+  margin: 1em;
 }
 
 h1 {
@@ -40,28 +96,23 @@ h1 {
   padding:0px 6px 0px 0px;
   display:inline;
   clear:right;
-  font-family: "Gill Sans", sans-serif;
 }
 
 h2 {
   margin:0;
   padding:0px 6px 0px 0px;
   clear:right;
-  font-family: "Gill Sans", sans-serif;
 }
 
 h3 {
 	font-size: 16px;
-	font-family: "Gill Sans", sans-serif;
 }
 
 ul {
   display:inline-block;
   list-style-type: none;
   margin: 0;
-  padding: 10px 0 0px 6px;
-  font-family: "Gill Sans", sans-serif;
-  color:black;
+  padding: 0;
 }
 
 ol {
@@ -70,13 +121,11 @@ ol {
 
 li {
   list-style: none;
-  display:inline-block;
-  font-family: "Gill Sans", sans-serif;
   color: black;
 }
 
 p {
-  font-family: "Gill Sans", sans-serif;
+  margin: 0;
 }
 
 a:link {
@@ -93,21 +142,12 @@ a:hover {
   padding: 50px 20px 0px 10px;
 }
 
-footer {
-  background-color: #8a100b;
-  position: fixed;
-  margin-top: 10px;
-  bottom: 0px;
-  color: #F76900;
-  font-family: "Gill Sans", sans-serif;
-  font-size: 12px;
-}
-
 .contact {
   font-size: 22px;
 }
 
 .address {
+  color: black;
   line-height: 1;
   font-weight: bold;
   padding-top: 20px;
@@ -121,7 +161,6 @@ footer {
 table {
   padding: 15px 15px 15px 15px;
   margin: 10px 10px 10px 10px;
-  font-family: "Gill Sans", sans-serif;
 }
 
 td {
@@ -144,7 +183,6 @@ tr {
 
 a.header {
   list-style: none;
-  font-family: "Gill Sans", sans-serif;
   font-size: 18px;
   color: black;
 }
@@ -155,7 +193,6 @@ a.header:hover {
 
 a.post {
   list-style: none;
-  font-family: "Gill Sans", sans-serif;
   font-size: 18px;
   color: black;
 }
@@ -164,59 +201,49 @@ a.post:hover {
   color: #F76900;
 }
 
-.image_off, #Lucy:hover .image_on {
-  right: 15px;
-  bottom: 5px;
-  height: 50px;
-  width: 60px;
-  position: fixed;
-  display:none;
-}
-
-.image_on, #Lucy:hover .image_off {
-  right: 15px;
-  bottom: 5px;
-  height: 50px;
-  width: 60px;
-  position: fixed;
-  display:block;
-}
-
 body {
-  padding: 20px;
   min-height: 400px;
-  margin-bottom: 50px;
-  clear: both;
 }
 
 .profilepic {
   display: inline-block;
 }
 
-#app-footer-hp {
-  position: fixed;
-  margin-top: 10px;
-  bottom: 0px;
-  color: black;
-  font-family: "Gill Sans", sans-serif;
+#app-footer {
+  background-color: #8a100b;
+  color: #F76900;
   font-size: 12px;
+  margin-top: auto;
+  padding: 1rem;
 }
 
-.lucy {
-  float: right;
-  clear: right;
+#lucy {
+  content: url('./images/lucy_peekEDIT.png');
   display: inline-block;
-  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 5%;
+  height: auto;
   width: auto;
-  padding-right: 0px;
 }
 
-.lucy:hover {
+#lucy:hover {
   content: url('./images/lucy_peekEDITlick.png');
-  float: right;
-  clear: right;
-  display: inline-block;
-  height: 100%;
-  width: auto;
-  padding-right: 0px;
+}
+
+@media (max-width:911px) {
+  #homepage-container {
+    max-width: inherit;
+    margin: 1rem;
+  }
+
+  #contact-container {
+    max-width: inherit;
+    margin: 1rem;
+  }
+
+  #lucy {
+    /* original is 118px */
+    width: 59px;
+  }
 }
