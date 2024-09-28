@@ -4,6 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Gill Sans", sans-serif;
+  color: white;
 }
 
 body {
@@ -20,7 +21,7 @@ body.blog {
 }
 
 #app-header {
-  margin: 1em;
+  margin: 2em;
 }
 
 #app-header nav li {
@@ -37,23 +38,36 @@ body.blog {
   display: inline-block;
 }
 
-.homepage {
-  background-image: url('./images/rainier.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+#app-header-home {
+  margin: 2em;
 }
+
+#app-header-home nav li {
+  padding: .1rem;
+  display: inline-block;
+}
+
+#app-header-home #socials li:not(:first-child) {
+  margin-left: .5rem;
+}
+
+#app-header-home #socials li {
+  padding: .25rem;
+  display: inline-block;
+}
+
 
 #homepage-container {
   align-self: center;
   max-width: 55%;
   margin: 1rem;
-  margin-top: 10%;
-  background-color: rgba(251, 251, 251, 0.2);
+  margin-top: 5%;
+  /*background-color: rgba(251, 251, 251, 0.2);*/
   font-size: 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 20px;
 }
 
 #homepage-container p:not(:first-child) {
@@ -65,10 +79,11 @@ body.blog {
 }
 
 #about-container {
-  background-color: rgba(251, 251, 251, 0.2);
+  /*background-color: rgba(251, 251, 251, 0.2);*/
   margin: 30px 20px 75px 0px;
   position: fixed center;
   font-size: 16px;
+  padding: 50px;
 }
 
 #contact-container {
@@ -80,11 +95,15 @@ body.blog {
 }
 
 #contact-container a:link {
-  color: black;
+  color: white;
 }
 
 #publications-container {
   margin: 1em;
+}
+
+#errata {
+  font-size: 14px;
 }
 
 #blogposts-container {
@@ -116,20 +135,20 @@ ul {
 }
 
 ol {
-	font-size: 12px;
+	font-size: 19px;
 }
 
 li {
   list-style: none;
-  color: black;
+  color: white;
 }
 
 p {
   margin: 0;
 }
 
-a:link {
-  color: #b7a57a;
+a:link, a:visited {
+  color: #ffc700;
   text-decoration:none;
 }
 
@@ -147,7 +166,7 @@ a:hover {
 }
 
 .address {
-  color: black;
+  color: white;
   line-height: 1;
   font-weight: bold;
   padding-top: 20px;
@@ -166,7 +185,7 @@ table {
 td {
   padding: 15px;
   margin: 25px;
-  border-top: solid 1px black;
+  border-top: solid 1px white;
   font-size: 14px;
 }
 
@@ -184,7 +203,7 @@ tr {
 a.header {
   list-style: none;
   font-size: 18px;
-  color: black;
+  color: white;
 }
 
 a.header:hover {
@@ -194,7 +213,7 @@ a.header:hover {
 a.post {
   list-style: none;
   font-size: 18px;
-  color: black;
+  color: white;
 }
 
 a.post:hover {
@@ -222,7 +241,7 @@ body {
   display: inline-block;
   position: fixed;
   right: 0;
-  top: 5%;
+  bottom: 1%;
   height: auto;
   width: auto;
 }
@@ -235,6 +254,7 @@ body {
   #homepage-container {
     max-width: inherit;
     margin: 1rem;
+    padding: 50px;
   }
 
   #contact-container {
